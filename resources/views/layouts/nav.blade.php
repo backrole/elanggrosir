@@ -1,4 +1,4 @@
-<nav class="bg-white fixed w-screen shadow mb-8 py-3">
+<nav class="bg-white fixed w-screen shadow mb-8 py-3 z-50">
     <div class="mx-4 px-6 md:px-0">
         <div class="flex items-center justify-center">
             <div class="mr-6">

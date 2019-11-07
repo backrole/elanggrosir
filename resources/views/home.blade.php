@@ -13,7 +13,7 @@
 
                 <div class="flex flex-row py-4 px-6 mb-0 font-semibold justify-between">
                     <div class="text-left text-blue-700">
-                        <i class="fa fa-list" aria-hidden="true"></i> Dashboard
+                        <i class="fa fa-list" aria-hidden="true"></i> Supplier
                     </div>
                     <div class="text-right flex flex-row">
                         <div class="text-blue-700">

@@ -1,4 +1,4 @@
-<div class="w-56 bg-blue-800 h-screen py-4 pt-20 text-white">
+<div class="w-56 bg-blue-800 min-h-screen py-4 pt-20 text-white">
     <div class="flex flex-col">
         <a href="{{ url('/admin/') }}" class="py-4 px-4 hover:bg-blue-600 capitalize text-gray-200">
             <i class="fa fa-home text-gray-500" aria-hidden="true"></i>

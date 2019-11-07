@@ -1,5 +1,6 @@
 <?php
 
+use App\UserRole;
 use Illuminate\Database\Seeder;
 
 class RoleTableSeeder extends Seeder
@@ -11,18 +12,6 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i <= 2; $i++) {
-            if ($i == 1) {
-                DB::table('user_roles')->insert([
-                    'role' => $i,
-                    'keterangan' => 'admin'
-                ]);
-            } else if ($i == 2) {
-                DB::table('user_roles')->insert([
-                    'role' => $i,
-                    'keterangan' => 'karyawan',
-                ]);
-            }
-        }
+        factory(UserRole::class, 2);
     }
 }

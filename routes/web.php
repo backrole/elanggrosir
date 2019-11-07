@@ -11,11 +11,19 @@
 |
 */
 
+use App\DataTables\SupplierDataTable;
+
 Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
 
 Route::get('/admin', 'AdminController@index')->name('admin');
+
 Route::resource('/admin/supplier', 'SupplierController')->middleware('auth');
+Route::get('/admin/table/supplier/', 'SupplierController@dataTable')->name('table.supplier');
+// Route::get('/admin/supplier', function (SupplierDataTable $dataTable) {
+//     return $dataTable->render('admin.supplier.index');
+// });
+
 Route::resource('/admin/produk_masuk', 'ProdukMasukController')->middleware('auth');

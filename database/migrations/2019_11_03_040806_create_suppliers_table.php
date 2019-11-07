@@ -17,7 +17,7 @@ class CreateSuppliersTable extends Migration
             $table->bigIncrements('id');
             $table->string('nama_supplier', 100);
             $table->string('alamat', 100);
-            $table->bigInteger('telp');
+            $table->string('telp');
             $table->string('nama_sales', 100);
             $table->timestamps();
         });

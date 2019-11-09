@@ -37,14 +37,7 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'nama_supplier' => 'required|string|max:255',
-            'nama_sales' => 'required|string',
-            'alamat' => 'required|string|max:255',
-            'telp' => 'required|string|max:15',
-        ]);
-
-        $model = Supplier::create($request->all());
+        $model = Supplier::create($this->validateRequest());
         return $model;
     }
 
@@ -56,7 +49,9 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        //
+        $model = Supplier::findOrFail($id);
+
+        return view('admin.supplier.show', compact('model'));
     }
 
     /**
@@ -67,7 +62,8 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        return "edit";
+        $model = Supplier::findOrFail($id);
+        return view('admin.supplier.form', compact('model'));
     }
 
     /**
@@ -79,7 +75,9 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $model = Supplier::findOrFail($id);
+        $model->update($this->validateRequest());
+        return $model;
     }
 
     /**
@@ -90,7 +88,10 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $model = Supplier::findOrFail($id);
+        $model->delete();
+        // Supplier::destroy($id);
     }
 
     public function dataTable()
@@ -131,5 +132,15 @@ class SupplierController extends Controller
         //     ->editColumn('action', 'admin.supplier._action')
         //     ->rawColumns(['action'])
         //     ->make(true);
+    }
+
+    private function validateRequest()
+    {
+        return request()->validate([
+            'nama_supplier' => 'required|string|max:255',
+            'nama_sales' => 'required|string',
+            'alamat' => 'required|string|max:255',
+            'telp' => 'required|string|max:15',
+        ]);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="md:w-auto md:mx-auto mx-auto p-4 m-20">
+        <div class="md:w-auto mx-6 p-4 mt-20" style="width:100%">
 
             @if (session('status'))
                 <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
 
-                <div class="min-w-full w-full p-6">
+                <div class="min-w-full p-6">
                     <table class="table-auto border w-full" id="dataTable">
                         <thead>
                             <tr>
@@ -46,7 +46,6 @@
                 </div>
             </div>
         </div>
-        <h1>{{ $model ?? '' }}</h1>
 
         {{-- {!! $dataTable->table() !!} --}}
         @push('script')
@@ -54,6 +53,7 @@
                 $('#dataTable').DataTable({
                     responsive:true,
                     processing:true,
+                    order:[5,'desc'],
                     serverSide:true,
                     ajax: '{!! route('table.supplier') !!}',
                     columns:[

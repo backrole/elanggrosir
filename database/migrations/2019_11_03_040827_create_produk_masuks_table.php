@@ -24,6 +24,7 @@ class CreateProdukMasuksTable extends Migration
                 $table->integer('stock_retail');
                 $table->integer('harga_grosir');
                 $table->integer('harga_retail');
+                $table->integer('harga_beli');
                 $table->integer('isi_per_box');
                 $table->string('status_pembayaran');
                 $table->unsignedBigInteger('id_supplier');

@@ -26,4 +26,5 @@ Route::get('/admin/table/supplier/', 'SupplierController@dataTable')->name('tabl
 //     return $dataTable->render('admin.supplier.index');
 // });
 
-Route::resource('/admin/produk_masuk', 'ProdukMasukController')->middleware('auth');
+Route::resource('/admin/produk-masuk', 'ProdukMasukController')->middleware('auth');
+Route::get('/admin/table/produkMasuk/', 'produkMasukController@dataTable')->name('table.produkMasuk');

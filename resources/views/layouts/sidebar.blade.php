@@ -6,11 +6,11 @@
         </a>
         <a href="{{ url('/admin/supplier') }}" class="py-4 px-4 hover:bg-blue-600 capitalize text-gray-200">
             <i class="fa fa-home text-gray-500" aria-hidden="true"></i>
-            Produk Masuk
+            Supplier
         </a>
-        <a href="{{ url('/admin/penjualan') }}" class="py-4 px-4 hover:bg-blue-600 capitalize text-gray-200">
+        <a href="{{ url('/admin/produk-masuk') }}" class="py-4 px-4 hover:bg-blue-600 capitalize text-gray-200">
             <i class="fa fa-home text-gray-500" aria-hidden="true"></i>
-            Penjualan
+            Produk Masuk
         </a>
         <a href="{{ url('/admin/laporan') }}" class="py-4 px-4 hover:bg-blue-600 capitalize text-gray-200">
             <i class="fa fa-home text-gray-500" aria-hidden="true"></i>

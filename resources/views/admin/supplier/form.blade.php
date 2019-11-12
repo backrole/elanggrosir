@@ -12,6 +12,10 @@
         {!! Form::text('nama_sales', null, ['class' => 'form-input focus:shadow-none mt-1 block w-full', 'id' => 'nama_sales', 'value' => "{{ old('nama_sales') }}"]) !!}
     </label>
     <label class="block mb-2">
+        <span class="text-gray-700">Email</span>
+        {!! Form::text('email', null, ['class' => 'form-input focus:shadow-none mt-1 block w-full', 'id' => 'email', 'value' => "{{ old('email') }}"]) !!}
+    </label>
+    <label class="block mb-2">
         <span class="text-gray-700">Alamat Lengkap</span>
         {!! Form::textarea('alamat', null, ['class' => 'form-textarea focus:shadow-none mt-1 block w-full', 'id' => 'alamat', 'value' => "{{ old('alamat') }}"]) !!}
     </label>

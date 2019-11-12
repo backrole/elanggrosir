@@ -139,6 +139,7 @@ class SupplierController extends Controller
         return request()->validate([
             'nama_supplier' => 'required|string|max:255',
             'nama_sales' => 'required|string',
+            'email' => 'required|email',
             'alamat' => 'required|string|max:255',
             'telp' => 'required|string|max:15',
         ]);

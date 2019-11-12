@@ -72,7 +72,6 @@ $('#modal-save').click(function (event) {
         success: function (res) {
             form.trigger('reset');
             toggleModal();
-            $('#dataTable').DataTable().ajax.reload();
 
             method == 'POST' ? Swal.fire(
                 'Tambah Data Berhasil!',
@@ -83,6 +82,7 @@ $('#modal-save').click(function (event) {
                 'Tabel telah diperbarui!',
                 'success'
             );
+            $('#dataTable').DataTable().ajax.reload();
         },
         error: function (xhr) {
             var res = xhr.responseJSON;

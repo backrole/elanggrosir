@@ -13,7 +13,7 @@ class ProdukMasukController extends Controller
      */
     public function index()
     {
-        return "asd";
+        return view('admin.produkMasuk.index');
     }
 
     /**
@@ -80,5 +80,25 @@ class ProdukMasukController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dataTable()
+    {
+        $model = Supplier::query();
+        return DataTables::of($model)
+            ->addColumn('action', function ($model) {
+                return view('layouts._action', [
+                    'model' => $model,
+                    'url_show' => route('supplier.show', $model->id),
+                    'url_edit' => route('supplier.edit', $model->id),
+                    'url_destroy' => route('supplier.destroy', $model->id),
+                ]);
+            })
+            ->addIndexColumn()
+            ->rawColumns(['action'])
+            ->editColumn('created_at', function (Supplier $supplier) {
+                return $supplier->created_at->diffForHumans();
+            })
+            ->make(true);
     }
 }

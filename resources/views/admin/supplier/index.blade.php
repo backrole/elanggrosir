@@ -30,12 +30,13 @@
                 </div>
 
                 <div class="min-w-full p-6">
-                    <table class="table-auto border w-full" id="dataTable">
+                    <table class="table-auto border w-auto" id="dataTable">
                         <thead>
                             <tr>
                                 <th class="border px-4 py-2 w-auto">No</th>
                                 <th class="border px-4 py-2 w-auto">Nama Supplier</th>
                                 <th class="border px-4 py-2 w-auto">Nama Sales</th>
+                                <th class="border px-4 py-2 w-auto">Email</th>
                                 <th class="border px-4 py-2 w-auto">Alamat</th>
                                 <th class="border px-4 py-2 w-auto">No. Telp</th>
                                 <th class="border px-4 py-2 w-auto">Ditambahkan pada</th>
@@ -53,13 +54,14 @@
                 $('#dataTable').DataTable({
                     responsive:true,
                     processing:true,
-                    order:[5,'desc'],
+                    order:[6,'desc'],
                     serverSide:true,
                     ajax: '{!! route('table.supplier') !!}',
                     columns:[
                         {data:'DT_RowIndex', name:'id'},
                         {data:'nama_supplier', name:'nama_supplier'},
                         {data:'nama_sales', name:'nama_sales'},
+                        {data:'email', name:'email'},
                         {data:'alamat', name:'alamat'},
                         {data:'telp', name:'telp'},
                         {data:'created_at', name:'created_at'},

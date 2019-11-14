@@ -4,6 +4,7 @@ use App\ProdukMasuk;
 use Illuminate\Database\Seeder;
 
 class ProdukMasukSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.

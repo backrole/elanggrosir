@@ -7,6 +7,7 @@
       <th class="tw-px-4 tw-py-2">Email</th>
       <th class="tw-px-4 tw-py-2">Alamat</th>
       <th class="tw-px-4 tw-py-2">Telp</th>
+
     </tr>
   </thead>
   <tbody>

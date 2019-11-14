@@ -6,10 +6,10 @@
 //     });
 // }
 
-const overlay = document.querySelector('.modal-overlay')
+const overlay = document.querySelector('.tw-modal-overlay')
 overlay.addEventListener('click', toggleModal)
 
-var closemodal = document.querySelectorAll('.modal-close')
+var closemodal = document.querySelectorAll('.tw-modal-close')
 for (var i = 0; i < closemodal.length; i++) {
     closemodal[i].addEventListener('click', toggleModal)
 }
@@ -22,20 +22,20 @@ document.onkeydown = function (evt) {
     } else {
         isEscape = (evt.keyCode === 27)
     }
-    if (isEscape && document.body.classList.contains('modal-active')) {
+    if (isEscape && document.body.classList.contains('tw-modal-active')) {
         toggleModal()
     }
 };
 
 function toggleModal() {
     const body = document.querySelector('body')
-    const modal = document.querySelector('.modal')
-    modal.classList.toggle('opacity-0')
-    modal.classList.toggle('pointer-events-none')
-    body.classList.toggle('modal-active')
+    const modal = document.querySelector('.tw-modal')
+    modal.classList.toggle('tw-opacity-0')
+    modal.classList.toggle('tw-pointer-events-none')
+    body.classList.toggle('tw-modal-active')
 }
 
-$('body').on('click', '.modal-open', function (event) {
+$('body').on('click', '.tw-modal-open', function (event) {
     event.preventDefault();
     var me = $(this),
         url = me.attr('href'),
@@ -63,7 +63,7 @@ $('#modal-save').click(function (event) {
         url = form.attr('action'),
         method = $('input[name=_method]').val() == undefined ? 'POST' : 'PUT';
 
-    form.find('.mt-1').removeClass('border-red-500');
+    form.find('.tw-mt-1').removeClass('tw-border-red-500');
 
     $.ajax({
         url: url,
@@ -72,7 +72,6 @@ $('#modal-save').click(function (event) {
         success: function (res) {
             form.trigger('reset');
             toggleModal();
-            $('#dataTable').DataTable().ajax.reload();
 
             method == 'POST' ? Swal.fire(
                 'Tambah Data Berhasil!',
@@ -83,23 +82,25 @@ $('#modal-save').click(function (event) {
                 'Tabel telah diperbarui!',
                 'success'
             );
+            $('#dataTable').DataTable().ajax.reload();
         },
         error: function (xhr) {
             var res = xhr.responseJSON;
             if ($.isEmptyObject(res) == false) {
                 $.each(res.errors, function (key, value) {
                     $('#' + key)
-                        .closest('.mt-1')
-                        .addClass('border-solid')
-                        .addClass('border-red-500')
+                        .closest('.form')
+                        .addClass('tw-border-solid')
+                        .addClass('tw-border-red-500')
                         .attr('placeholder', 'Isian tidak boleh kosong!')
+                    console.log(key)
                 });
             }
         }
     });
 });
 
-$('body').on('click', '.modal-delete', function (event) {
+$('body').on('click', '.tw-modal-delete', function (event) {
     event.preventDefault();
     var me = $(this),
         url = me.attr('href'),

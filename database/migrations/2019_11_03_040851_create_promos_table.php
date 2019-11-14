@@ -15,7 +15,7 @@ class CreatePromosTable extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_barang');
+            $table->unsignedBigInteger('produk_id');
             $table->integer('diskon');
             $table->string('bonus_barang');
             $table->string('keterangan');
@@ -23,7 +23,7 @@ class CreatePromosTable extends Migration
             $table->date('selesai_promo');
             $table->timestamps();
 
-            $table->foreign('id_barang')->references('id')->on('produk_masuks');
+            $table->foreign('produk_id')->references('id')->on('produk_masuks');
         });
     }
 

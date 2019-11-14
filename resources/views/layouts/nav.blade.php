@@ -1,22 +1,22 @@
-<nav class="bg-white fixed w-screen shadow mb-8 py-3 z-50">
-    <div class="mx-4 px-6 md:px-0">
-        <div class="flex items-center justify-center">
-            <div class="mr-6">
-                <a href="{{ url('/') }}" class="text-3xl font-bold text-blue-700 no-underline font-sans">
+<nav class="tw-bg-white tw-fixed tw-w-screen tw-shadow tw-mb-8 tw-py-3 tw-z-50">
+    <div class="tw-mx-4 tw-px-6 md:tw-px-0">
+        <div class="tw-flex tw-items-center tw-justify-center">
+            <div class="tw-mr-6">
+                <a href="{{ url('/') }}" class="tw-text-3xl tw-font-bold tw-text-blue-700 hover:tw-no-underline tw-font-sans">
                     {{ config('app.name', 'Laravel') }}
                 </a>
             </div>
-            <div class="flex-1 text-right">
+            <div class="tw-flex-1 tw-text-right">
                 @guest
-                    <a class="no-underline hover:underline text-blue-700 text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="tw-no-underline hover:tw-no-underline tw-text-blue-700 tw-text-sm tw-p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
                     @if (Route::has('register'))
-                        <a class="no-underline hover:underline text-blue-700 text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="tw-no-underline hover:tw-no-underline tw-text-blue-700 tw-text-sm tw-p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
                     @endif
                 @else
-                    <span class="text-blue-700 text-sm pr-4">{{ Auth::user()->name }}</span>
+                    <span class="tw-text-blue-700 tw-text-sm tw-pr-4">{{ Auth::user()->name }}</span>
 
                     <a href="{{ route('logout') }}"
-                        class="no-underline hover:underline text-blue-700 text-sm p-3"
+                        class="tw-no-underline hover:tw-no-underline tw-text-blue-700 tw-text-sm tw-p-3"
                         onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">

@@ -91,7 +91,6 @@ class SupplierController extends Controller
 
         $model = Supplier::findOrFail($id);
         $model->delete();
-        // Supplier::destroy($id);
     }
 
     public function dataTable()
@@ -112,26 +111,6 @@ class SupplierController extends Controller
                 return $supplier->created_at->diffForHumans();
             })
             ->make(true);
-
-        // return DataTables::of($model)
-        //     ->setRowClass('{{ $id % 2 == 0 ? "text-green-500" : "text-blue-500" }}')
-        //     ->setRowId('{{$id}}')
-        //     ->setRowData([
-        //         'data-id' => 'row-{{$id}}',
-        //         'data-nama_supplier' => 'row-{{$nama_supplier}}',
-        //         'data-nama_sales' => 'row-{{$nama_sales}}',
-        //         'data-alamat' => 'row-{{$alamat}}',
-        //         'data-telp' => 'row-{{$telp}}',
-        //     ])
-        //     ->addColumn('action', function (Supplier $supplier) {
-        //         return "";
-        //     })
-        //     ->editColumn('created_at', function (Supplier $supplier) {
-        //         return $supplier->created_at->diffForHumans();
-        //     })
-        //     ->editColumn('action', 'admin.supplier._action')
-        //     ->rawColumns(['action'])
-        //     ->make(true);
     }
 
     private function validateRequest()
@@ -139,6 +118,7 @@ class SupplierController extends Controller
         return request()->validate([
             'nama_supplier' => 'required|string|max:255',
             'nama_sales' => 'required|string',
+            'email' => 'required|email',
             'alamat' => 'required|string|max:255',
             'telp' => 'required|string|max:15',
         ]);

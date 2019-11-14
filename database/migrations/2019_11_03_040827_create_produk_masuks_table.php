@@ -17,21 +17,22 @@ class CreateProdukMasuksTable extends Migration
             'produk_masuks',
             function (Blueprint $table) {
                 $table->bigIncrements('id');
-                $table->bigInteger('id_barang');
+                $table->unsignedBigInteger('supplier_id');
+                $table->unsignedBigInteger('jenis_produk_id');
+                $table->bigInteger('produk_id');
                 $table->string('nama_barang');
                 $table->integer('stok_beli');
-                $table->integer('stock_grosir');
-                $table->integer('stock_retail');
+                $table->integer('stok_grosir');
+                $table->integer('stok_retail');
                 $table->integer('harga_grosir');
                 $table->integer('harga_retail');
+                $table->integer('harga_beli');
                 $table->integer('isi_per_box');
                 $table->string('status_pembayaran');
-                $table->unsignedBigInteger('id_supplier');
-                $table->unsignedBigInteger('id_jenis_produk');
                 $table->timestamps();
 
-                $table->foreign('id_supplier')->references('id')->on('suppliers');
-                $table->foreign('id_jenis_produk')->references('id')->on('jenis_produks');
+                $table->foreign('supplier_id')->references('id')->on('suppliers');
+                $table->foreign('jenis_produk_id')->references('id')->on('jenis_produks');
             }
         );
     }

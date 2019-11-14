@@ -13,16 +13,16 @@
 
                 <div class="tw-flex tw-flex-row tw-py-4 tw-px-6 tw-mb-0 tw-font-semibold tw-justify-between">
                     <div class="tw-text-left tw-text-blue-700">
-                        <i class="fa fa-list" aria-hidden="true"></i> Data Supplier
+                        <i class="fa fa-list" aria-hidden="true"></i> Data Produk Masuk
                     </div>
                     <div class="tw-text-right tw-flex tw-flex-row">
-                        <div class="tw-text-blue-700">
-                            <a href="{{ route('supplier.create') }}" class="tw-modal-open tw-bg-blue-700 hover:tw-bg-blue-600 tw-text-white hover:tw-text-white hover:tw-no-underline tw-py-2 tw-px-2 tw-rounded-sm tw-text-sm tw-font-semibold">
+                        <div class="">
+                            <a href="{{ route('produk-masuk.create') }}" class="tw-modal-open hover:tw-no-underline hover:tw-text-white no-underline  tw-bg-blue-700 hover:tw-bg-blue-600 tw-text-white tw-py-2 tw-px-2 tw-rounded-sm tw-text-sm tw-font-semibold">
                                 <i class="fa fa-plus" aria-hidden="true"></i> Tambah
                             </a>
                         </div>
-                        <div class="tw-text-blue-700 tw-ml-2">
-                            <a href="" class="tw-bg-orange-700 hover:tw-bg-orange-600 tw-text-white hover:tw-text-white hover:tw-no-underline tw-py-2 tw-px-2 tw-rounded-sm tw-text-sm tw-font-semibold">
+                        <div class=" tw-ml-2">
+                            <a href="" class="tw-bg-orange-700 hover:tw-bg-orange-600 hover:tw-no-underline hover:tw-text-white no-underline tw-text-white tw-py-2 tw-px-2 tw-rounded-sm tw-text-sm tw-font-semibold">
                                 <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Export
                             </a>
                         </div>
@@ -34,12 +34,14 @@
                         <thead>
                             <tr>
                                 <th class="">No</th>
-                                <th class="">Nama Supplier</th>
-                                <th class="">Nama Sales</th>
-                                <th class="">Email</th>
-                                <th class="">Alamat</th>
-                                <th class="">No. Telp</th>
-                                <th class="">Ditambahkan pada</th>
+                                <th class="">ID Barang</th>
+                                <th class="">Nama Barang</th>
+                                <th class="">Harga Beli</th>
+                                <th class="">Jumlah Beli</th>
+                                <th class="">Status Pembayaran</th>
+                                <th class="">Supplier Produk</th>
+                                <th class="">Jenis Produk</th>
+                                <th class="">Ditambahkan Pada</th>
                                 <th class="">Action</th>
                             </tr>
                         </thead>
@@ -54,16 +56,18 @@
                 $('#dataTable').DataTable({
                     responsive:true,
                     processing:true,
-                    order:[6,'desc'],
+                    order:[8,'desc'],
                     serverSide:true,
-                    ajax: '{!! route('table.supplier') !!}',
+                    ajax: '{!! route('table.produkMasuk') !!}',
                     columns:[
                         {data:'DT_RowIndex', name:'id'},
-                        {data:'nama_supplier', name:'nama_supplier'},
-                        {data:'nama_sales', name:'nama_sales'},
-                        {data:'email', name:'email'},
-                        {data:'alamat', name:'alamat'},
-                        {data:'telp', name:'telp'},
+                        {data:'produk_id', name:'produk_id'},
+                        {data:'nama_barang', name:'nama_barang'},
+                        {data:'harga_beli', name:'harga_beli'},
+                        {data:'stok_beli', name:'stok_beli'},
+                        {data:'status_pembayaran', name:'status_pembayaran'},
+                        {data:'supplier_id', name:'supplier_id'},
+                        {data:'jenis_produk_id', name:'jenis_produk_id'},
                         {data:'created_at', name:'created_at'},
                         {data:'action', name:'action'},
                     ],

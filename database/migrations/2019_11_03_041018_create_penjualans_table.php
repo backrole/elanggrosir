@@ -20,14 +20,14 @@ class CreatePenjualansTable extends Migration
             $table->integer('total');
             $table->integer('potongan_manual');
             $table->integer('hutang')->nullable();
-            $table->unsignedBigInteger('id_barang');
-            $table->unsignedBigInteger('id_promo');
-            $table->unsignedBigInteger('id_admin');
+            $table->unsignedBigInteger('produk_id');
+            $table->unsignedBigInteger('promo_id');
+            $table->unsignedBigInteger('admin_id');
             $table->timestamps();
 
-            $table->foreign('id_barang')->references('id')->on('produks');
-            $table->foreign('id_promo')->references('id')->on('promos');
-            $table->foreign('id_admin')->references('id')->on('users');
+            $table->foreign('produk_id')->references('id')->on('produks');
+            $table->foreign('promo_id')->references('id')->on('promos');
+            $table->foreign('admin_id')->references('id')->on('users');
         });
     }
 

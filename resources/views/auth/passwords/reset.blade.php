@@ -1,58 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mx-auto">
-        <div class="flex flex-wrap justify-center">
-            <div class="w-full max-w-sm">
-                <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
+    <div class="tw-container tw-mx-auto">
+        <div class="tw-flex tw-flex-wrap tw-justify-center">
+            <div class="tw-w-full tw-max-w-sm">
+                <div class="tw-flex tw-flex-col tw-break-words tw-bg-white tw-border tw-border-2 tw-rounded tw-shadow-md">
 
-                    <div class="font-semibold bg-gray-200 text-gray-700 py-3 px-6 mb-0">
+                    <div class="tw-font-semibold tw-bg-gray-200 tw-text-gray-700 tw-py-3 tw-px-6 tw-mb-0">
                         {{ __('Reset Password') }}
                     </div>
 
-                    <form class="w-full p-6" method="POST" action="{{ route('password.update') }}">
+                    <form class="tw-w-full tw-p-6" method="POST" action="{{ route('password.update') }}">
                         @csrf
 
                         <input type="hidden" name="token" value="{{ $token }}">
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">
+                        <div class="tw-flex tw-flex-wrap tw-mb-6">
+                            <label for="email" class="tw-block tw-text-gray-700 tw-text-sm tw-font-bold tw-mb-2">
                                 {{ __('E-Mail Address') }}:
                             </label>
 
-                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline @error('email') tw-border-red-500 @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
+                                <p class="tw-text-red-500 tw-text-xs tw-italic tw-mt-4">
                                     {{ $message }}
                                 </p>
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password" class="block text-gray-700 text-sm font-bold mb-2">
+                        <div class="tw-flex tw-flex-wrap tw-mb-6">
+                            <label for="password" class="tw-block tw-text-gray-700 tw-text-sm tw-font-bold tw-mb-2">
                                 {{ __('Password') }}:
                             </label>
 
-                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="password" class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline @error('password') tw-border-red-500 @enderror" name="password" required autocomplete="new-password">
 
                             @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
+                                <p class="tw-text-red-500 tw-text-xs tw-italic tw-mt-4">
                                     {{ $message }}
                                 </p>
                             @enderror
                         </div>
 
-                        <div class="flex flex-wrap mb-6">
-                            <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2">
+                        <div class="tw-flex tw-flex-wrap tw-mb-6">
+                            <label for="password-confirm" class="tw-block tw-text-gray-700 tw-text-sm tw-font-bold tw-mb-2">
                                 {{ __('Confirm Password') }}:
                             </label>
 
-                            <input id="password-confirm" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" name="password_confirmation" required autocomplete="new-password">
                         </div>
 
-                        <div class="flex flex-wrap">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                        <div class="tw-flex tw-flex-wrap">
+                            <button type="submit" class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-gray-100 tw-font-bold  tw-py-2 tw-px-4 tw-rounded focus:tw-outline-none focus:tw-shadow-outline">
                                 {{ __('Reset Password') }}
                             </button>
                         </div>

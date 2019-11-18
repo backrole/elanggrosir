@@ -28,3 +28,7 @@ Route::get('/admin/table/supplier/', 'SupplierController@dataTable')->name('tabl
 
 Route::resource('/admin/produk-masuk', 'ProdukMasukController')->middleware('auth');
 Route::get('/admin/table/produk-masuk/', 'produkMasukController@dataTable')->name('table.produkMasuk');
+
+Route::get('/kasir', function () {
+    return view('kasir/index');
+});

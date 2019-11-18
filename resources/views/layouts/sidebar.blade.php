@@ -1,4 +1,4 @@
-<div class="tw-w-56 tw-bg-blue-800 tw-min-h-screen tw-py-4 tw-pt-20 tw-text-white">
+<div class="tw-w-56 tw-bg-blue-800 tw-min-h-screen tw-py-4 tw-pt-8 tw-text-white">
     <div class="tw-flex tw-flex-col">
         <a href="{{ url('/admin/') }}" class="tw-py-4 tw-px-4 hover:tw-text-white hover:tw-bg-blue-600 hover:tw-no-underline tw-capitalize tw-text-gray-200">
             <i class="fa fa-home tw-text-gray-500" aria-hidden="true"></i>

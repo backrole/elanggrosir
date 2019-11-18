@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-        <div class="md:tw-w-auto tw-mx-6 tw-p-4 tw-mt-20" style="width:100%">
+        <div class="md:tw-w-auto tw-mx-6 tw-p-4" style="width:100%">
 
             @if (session('status'))
                 <div class="tw-text-sm tw-border tw-border-t-8 tw-rounded tw-text-green-700 tw-border-green-600 tw-bg-green-100 tw-px-3 tw-py-4 tw-mb-4" role="alert">
